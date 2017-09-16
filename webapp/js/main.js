@@ -8,6 +8,7 @@
 // }
 
 var detectionCounter = 0;
+var isDrawing = true;
 
  var video = document.getElementById('video');
       var canvas = document.getElementById('canvas');
@@ -38,11 +39,12 @@ var detectionCounter = 0;
               // }
             // }
              if (rect.x > 300 && rect.y< 150 && area > 12500 ){
-              context.fillText('Camera [00:17:88:70:A2:2D]', rect.x + 5, rect.y - 5);
-              context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+              if (isDrawing){
+                context.fillText('Camera [00:17:88:70:A2:2D]', rect.x + 5, rect.y - 5);
+                context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+              }
 
               detectionCounter++;
-              console.log(detectionCounter);
               if (detectionCounter > 50) {
                 setTimeout(showDetailImage, 2000);
               }

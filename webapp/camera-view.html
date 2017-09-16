@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <style type="text/css">
-        #right-image {
+        #right-image, #right-image-back {
             /*border: 1px solid black;*/
             width: 600px;
             height: 450px; 
@@ -29,6 +29,36 @@
             top: 110px;
 
         }
+
+        #right-image-back-overlay {
+            border: 3px solid green;
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            top: 475px;
+            right: 395px;
+            display: none;
+        }
+
+        #bouncing-arrow {
+                color: green;
+                display: none;
+                position: absolute;
+                margin: auto;
+                top: 170px; bottom: 0;
+                right: 410px;
+                width: 40px;
+                height: 40px;
+                font-size: 50px;
+                line-height: 40px;
+                -webkit-animation: bounce 2s infinite ease-in-out;
+        }
+
+        @-webkit-keyframes bounce {
+    0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
+    40%  { -webkit-transform: translateY(-20px); }
+    80% { -webkit-transform: translateY(-10px); }
+}
     </style>
 </head>
 
@@ -45,7 +75,20 @@
         <video id="video" width="600" height="450" preload autoplay loop muted controls></video>
       <canvas id="canvas" width="600" height="450"></canvas>
       <div id='right-image'><img src="img/camera.png"></div>
-      <div id='right-webcam'>Webcam of Grand Daughter</div>
+      <div id='right-image-back'><img src="img/camera-back.png"></div>
+      <div id='right-image-back-overlay'></div>
+      <div id='bouncing-arrow'>&#11014;</div>
+       <button id='help-button' type="button" class="btn btn-info" style="position: absolute; right: 50px" onclick="showWebcamView()">
+      <span class="glyphicon glyphicon-question-sign"></span> Ask for Help
+    </button>
+
+      <div id='right-webcam'>
+          <video id='grandchild-video' onclick="finish()" width="640" height="360" controls>
+              <source src="video/sample.mp4" type="video/mp4">
+        </video>
+      </div>
+
+
     </div>
     <div class="bottom-container"></div>
 
@@ -70,13 +113,34 @@
             if (! imageAlreadyShown){
                 $('#right-image').fadeIn(1000);
                 imageAlreadyShown = true;
+                isDrawing = false;
+
+                setTimeout(function(){
+                    $('#right-image').fadeOut(100);
+                    $('#right-image-back').fadeIn(1000);  
+                    setTimeout(function(){
+                          $('#right-image-back-overlay').fadeIn(1000);
+                         $('#bouncing-arrow').fadeIn(1000);  
+                    }, 2000) 
+
+                }, 5000);
             }
         }
 
         function showWebcamView() {
             $('#right-image').hide();
+            $('#right-image-back').hide();
+            $('#right-image-back-overlay').hide();
+            $('#bouncing-arrow').hide();
+            $('#help-button').fadeOut(300);
             $('#right-webcam').fadeIn(1000);   
+
+            document.getElementById('grandchild-video').play();
         }
+
+        function finish(){
+            setTimeout(function(){window.location.href = 'final-screen.html';}, 1000)
+        };
     </script>
 
 </body>

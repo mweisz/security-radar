@@ -1,3 +1,17 @@
+body {
+    background-color: #3A4B54;
+}
+
+.navbar-inverse {
+    background-color: #253440 !important;
+    background-color: #253440 !important;
+    color: white !important;
+
+    font-size: 14pt;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
 .main-container {
     width: 100%;
 }
@@ -7,7 +21,7 @@
     width: 100%;
     bottom: 0px;
     position: absolute;
-    background-color: lightgrey;
+    background-color: #1A242D;
     overflow: auto;
 }
 
@@ -37,4 +51,9 @@
     margin-left: 100px;
     margin-top: 35px;
     position: absolute;
+}
+
+
+.list-group-item {
+        padding: 3px 15px;
 }

@@ -2,33 +2,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Help Grandma</title>
+<title>IoT Security Radar</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <style type="text/css">
       #floorplan-overlay {
         position: absolute;
-        top:310px;
-        left:905px;
+        top:308px;
+        left:897px;
         display: none;
       }
 
       #floorplan-overlay-circle {
-        border: 3px solid red;
-        border-radius: 25px;
-        height: 50px;
-        width: 50px;
+        border: 6px solid red;
+        border-radius: 30px;
+        height: 60px;
+        width: 60px;
       }
 
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">Help Grandma</nav>
+    <nav class="navbar navbar-inverse">IoT Security Radar</nav>
 
     <div class="main-container" style="text-align: center">
-       <img src="img/floorplan.png" style="height: 500px; margin-top: 35px">
+       <img src="img/floorplan2.png" style="height: 500px; margin-top: 35px">
         <div id="floorplan-overlay">
             <div id="floorplan-overlay-circle"></div>
         </div>
@@ -37,7 +37,9 @@
 
 
     <div class="bottom-container">
-
+    <ul class="list-group" id="scan-list">
+        <li class="list-group-item list-group-item-dark">A8:5C:2C:40:41:7A - Texas Instruments </li><li class="list-group-item list-group-item-warning">E0:E5:CF:B4:AC:F0 - TAIYO YUDEN </li><li class="list-group-item list-group-item-dark">AC:3F:A4:4A:32:9A - Philips Lighting</li><li class="list-group-item list-group-item-danger">00:17:88:70:A2:2D - Intel Corporate </li><li class="list-group-item list-group-item-dark">18:5E:0F:CC:C7:BB - Intel Corporate </li><li class="list-group-item list-group-item-dark">80:19:34:72:2C:CA - EDUP INTERNATIONAL</li><li class="list-group-item list-group-item-dark">E8:4E:06:4B:D8:EE - devolo</li><li class="list-group-item list-group-item-warning">F4:06:8D:97:D3:9D - BinatoneInternational </li><li class="list-group-item list-group-item-dark">00:0A:E2:1D:18:23 - AVM Audiovisuelles Marketing und Com</li><li class="list-group-item list-group-item-dark">38:10:D5:65:1F:CF - Apple </li><li class="list-group-item list-group-item-dark">78:31:C1:CF:A8:68 - MAC Vendor</li>
+    </ul>
     </div>
 
 
@@ -48,10 +50,10 @@
 
   <script type="text/javascript">
     setTimeout(function(){
-      $('#floorplan-overlay').fadeIn(1000);
+      $('#floorplan-overlay').fadeIn(3000);
       setTimeout(function(){
         window.location.href = 'camera-view.html';
-      }, 2000);
+      }, 5000);
     }, 1000)
 
   </script>
