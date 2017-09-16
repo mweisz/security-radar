@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Help Grandma</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">Help Grandma</nav>
+
+    <div class="main-container" style="text-align: center">
+        <img src="img/loading.gif" style="width: 350px; height: 350px; margin-top: 150px; margin-left: -50px">
+    </div>
+
+    <div class="bottom-container">
+    <ul class="list-group" id="scan-list">
+
+<!--       <li class="list-group-item list-group-item-danger">This is a danger list group item</li>
+      <li class="list-group-item list-group-item-warning">This is a warning list group item</li>
+      <li class="list-group-item list-group-item-info">This is a info list group item</li> -->
+
+    </ul>
+
+    </div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../wifi-scanner/scan.json"></script>
+    <script type="text/javascript">
+      var scanList = $('#scan-list');
+      // setInterval(function(){
+      //   var data = scanData.pop();
+      //   scanList.append('<li class="list-group-item list-group-item">' + data['mac'] + ' - ' + data['vendor']+'</li>')
+      // }, 500);
+
+      function doSomething() {}
+        (function loop() {
+            var rand = Math.round(Math.random() * (3000 - 500)) + 500;
+            setTimeout(function() {
+                    doSomething();
+                    var data = scanData.pop();
+                    if (data === undefined) {
+                      setTimeout(scanningDone, 2000);
+                    }
+                    if (data['mac'] === '00:17:88:70:A2:2D') {
+                      scanList.append('<li class="list-group-item list-group-item-danger">' + data['mac'] + ' - ' + data['vendor']+'</li>') ;
+                    } else if (data['mac'] === 'E0:E5:CF:B4:AC:F0' || data['mac'] === 'F4:06:8D:97:D3:9D'){
+                     scanList.append('<li class="list-group-item list-group-item-warning">' + data['mac'] + ' - ' + data['vendor']+'</li>')  ;
+                    } else {
+                       scanList.append('<li class="list-group-item list-group-item-secondary">' + data['mac'] + ' - ' + data['vendor']+'</li>')  ;
+                    }
+                    loop();  
+            }, rand);
+        }());
+
+        function scanningDone(){
+          window.location.href = 'floorplan-screen.html';
+        }
+    </script>
+
+
+</body>
+
+</html>

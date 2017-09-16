@@ -1,0 +1,12 @@
+var scanData = [ {"mac": "78:31:C1:CF:A8:68", "vendor": "MAC Vendor"},
+    {"mac": "38:10:D5:65:1F:CF", "vendor": "Apple "},
+    {"mac": "00:0A:E2:1D:18:23", "vendor": "AVM Audiovisuelles Marketing und Com"},
+    {"mac": "F4:06:8D:97:D3:9D", "vendor": "BinatoneInternational "},
+    {"mac": "E8:4E:06:4B:D8:EE", "vendor": "devolo"},
+    {"mac": "80:19:34:72:2C:CA", "vendor": "EDUP INTERNATIONAL"},
+    {"mac": "18:5E:0F:CC:C7:BB", "vendor": "Intel Corporate " },
+    {"mac": "00:17:88:70:A2:2D", "vendor": "Intel Corporate "},
+    {"mac": "AC:3F:A4:4A:32:9A", "vendor": "Philips Lighting"},
+    {"mac": "E0:E5:CF:B4:AC:F0", "vendor": "TAIYO YUDEN "},
+    {"mac": "A8:5C:2C:40:41:7A", "vendor": "Texas Instruments "},
+]

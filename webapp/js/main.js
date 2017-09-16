@@ -7,6 +7,7 @@
 //     } );
 // }
 
+var detectionCounter = 0;
 
  var video = document.getElementById('video');
       var canvas = document.getElementById('canvas');
@@ -29,23 +30,34 @@
 
         var rightmostRect;
         event.data.forEach(function(rect) {
-            if (rightmostRect === undefined || (rect.x > rightmostRect.x ) ) {
-                rightmostRect = rect;
+            var area = rect.width * rect.height;
+            // console.log(area)
+            // if (area > 100 ){
+              // if (rightmostRect === undefined || (rect.x > rightmostRect.x ) ) {
+              //   rightmostRect = rect;
+              // }
+            // }
+             if (rect.x > 300 && rect.y< 150 && area > 12500 ){
+              context.fillText('Camera [00:17:88:70:A2:2D]', rect.x + 5, rect.y - 5);
+              context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+
+              detectionCounter++;
+              console.log(detectionCounter);
+              if (detectionCounter > 50) {
+                setTimeout(showDetailImage, 2000);
+              }
             }
 
-            console.log('TEST');
-
-          // context.font = '11px Helvetica';
-          // context.fillStyle = "#fff";
-          // context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
-          // context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+            // if (rightmostRect === undefined || (area > (rightmostRect.x * rightmostRect.y)) ) {
+            //     rightmostRect = rect;
+            // }
         });
 
-          //   context.strokeStyle = "#000000"
-          // if(rect === rightmostRect) {
-            context.strokeStyle = "#FF0000"
-          // }
+          context.fillStyle = "#fff";
+          context.font = '11px Helvetica';
+          context.strokeStyle = "#00FF00"
           context.lineWidth= 3;
-          context.strokeRect(rightmostRect.x, rightmostRect.y, rightmostRect.width, rightmostRect.height);
+          // if (rightmostRect !== undefined){
+          //   context.strokeRect(rightmostRect.x, rightmostRect.y, rightmostRect.width, rightmostRect.height);
+          // }
       });
-     initGUIControllers(tracker);

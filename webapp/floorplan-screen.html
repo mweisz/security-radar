@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Help Grandma</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <style type="text/css">
+      #floorplan-overlay {
+        position: absolute;
+        top:310px;
+        left:905px;
+        display: none;
+      }
+
+      #floorplan-overlay-circle {
+        border: 3px solid red;
+        border-radius: 25px;
+        height: 50px;
+        width: 50px;
+      }
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">Help Grandma</nav>
+
+    <div class="main-container" style="text-align: center">
+       <img src="img/floorplan.png" style="height: 500px; margin-top: 35px">
+        <div id="floorplan-overlay">
+            <div id="floorplan-overlay-circle"></div>
+        </div>
+    </div>
+
+
+
+    <div class="bottom-container">
+
+    </div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    setTimeout(function(){
+      $('#floorplan-overlay').fadeIn(1000);
+      setTimeout(function(){
+        window.location.href = 'camera-view.html';
+      }, 2000);
+    }, 1000)
+
+  </script>
+</body>
+
+</html>

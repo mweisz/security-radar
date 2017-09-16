@@ -3,11 +3,12 @@
 }
 
 .bottom-container {
-    height: 30%;
+    height: 300px;
     width: 100%;
+    bottom: 0px;
     position: absolute;
-    bottom: 0;
     background-color: lightgrey;
+    overflow: auto;
 }
 
 #camera-overlay {
