@@ -11,12 +11,14 @@
     <nav class="navbar navbar-inverse">IoT Security Radar</nav>
 
     <div class="main-container" style="text-align: center">
-        <img src="img/spinner.gif" style="margin-top: 150px; margin-left: -50px">
+        <img src="img/spinner.gif" style="margin-top: 150px; ">
+        <h4 style="color: white">Scanning in Progress...</h4>
+        <h5 id="risks-found" style="color: white">Found 0 Potential Risks</h5>
         <!-- <div id="circle"></div> -->
     </div>
 
     <div class="bottom-container">
-    <ul class="list-group" id="scan-list">
+    <ul class="list-group" id="scan-list" style="padding: 20px 20px 0px 20px;">
 
 <!--       <li class="list-group-item list-group-item-danger">This is a danger list group item</li>
       <li class="list-group-item list-group-item-warning">This is a warning list group item</li>
@@ -49,11 +51,12 @@
                       setTimeout(scanningDone, 2000);
                     }
                     if (data['mac'] === '00:17:88:70:A2:2D') {
-                      scanList.append('<li class="list-group-item list-group-item-danger">' + data['mac'] + ' - ' + data['vendor']+'</li>') ;
+                      scanList.append('<li class="list-group-item list-group-item-danger" style="font-weight: bold">' + data['mac'] + ' - ' + data['vendor']+'</li>') ;
+                      $('#risks-found').text("Found 1 Potential Risk")
                     } else if (data['mac'] === 'E0:E5:CF:B4:AC:F0' || data['mac'] === 'F4:06:8D:97:D3:9D'){
                      scanList.append('<li class="list-group-item list-group-item-warning">' + data['mac'] + ' - ' + data['vendor']+'</li>')  ;
                     } else {
-                       scanList.append('<li class="list-group-item list-group-item-dark">' + data['mac'] + ' - ' + data['vendor']+'</li>')  ;
+                       scanList.append('<li class="list-group-item list-group-item-success">' + data['mac'] + ' - ' + data['vendor']+'</li>')  ;
                     }
                     loop();  
             }, rand);

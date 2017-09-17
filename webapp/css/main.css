@@ -72,3 +72,9 @@ body {
 .list-group-item {
         padding: 3px 15px;
 }
+
+
+.list-group-item-dark {
+            background-color: #d3d6da;
+            color:black;
+}

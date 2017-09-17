@@ -9,16 +9,16 @@
     <style type="text/css">
       #floorplan-overlay {
         position: absolute;
-        top:310px;
-        left:905px;
+        top:308px;
+        left:897px;
         display: none;
       }
 
       #floorplan-overlay-circle {
-        border: 3px solid green;
-        border-radius: 25px;
-        height: 50px;
-        width: 50px;
+        border: 6px solid green;
+        border-radius: 30px;
+        height: 60px;
+        width: 60px;
       }
 
     </style>
@@ -36,8 +36,16 @@
 
 
 
-    <div class="bottom-container">
-
+    <div class="bottom-container" style="color: white">
+        <div class='left-panel'>            
+        <h3 style="color: white">Sucessfully Fixed (1 / 1)</h3>
+        <ul class="list-group" id="scan-list">
+            <li class="list-group-item list-group-item-success ">00:17:88:70:A2:2D - Intel Corporate </li>
+                 </ul></div>   
+        <div class='right-panel' style="line-height: 300px;  text-align: center; ">   
+            <span id='instructions' style="font-size: 30pt; color: lightgrey">Congratulations!  </span>
+            <span style="font-size: 30pt; color: lightgrey">All your devices are safe.</span>
+        </div>
     </div>
 
 
@@ -48,7 +56,7 @@
 
   <script type="text/javascript">
     setTimeout(function(){
-      $('#floorplan-overlay').fadeIn(1000);
+      $('#floorplan-overlay').fadeIn(3000);
     }, 1000)
 
   </script>
