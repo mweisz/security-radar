@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Help Grandma</title>
+<title>IoT Security Radar</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -63,7 +63,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">Help Grandma</nav>
+    <nav class="navbar navbar-inverse">IoT Security Radar</nav>
 
     <div class="main-container">
 <!--         <div id="camera-overlay">
@@ -90,7 +90,19 @@
 
 
     </div>
-    <div class="bottom-container"></div>
+    <div class="bottom-container" style="color: white">
+        <div class='left-panel'>            
+        <h3 style="color: white">Potential Risks</h3>
+        <ul class="list-group" id="scan-list">
+            <li class="list-group-item list-group-item-danger ">00:17:88:70:A2:2D - Intel Corporate </li>
+            <li class="list-group-item list-group-item-warning">E0:E5:CF:B4:AC:F0 - TAIYO YUDEN </li>
+            <li class="list-group-item list-group-item-warning">F4:06:8D:97:D3:9D - BinatoneInternational </li>
+            </ul></div>   
+        <div class='right-panel' style="line-height: 300px;  text-align: center; ">   
+            <span id='instructions' style="font-size: 30pt; color: lightgrey">1. Locate the Device</span>
+            <!-- <span style="font-size: 30pt; color: lightgrey">1. Locate the Device</span> -->
+        </div>
+    </div>
 
 
 
@@ -115,13 +127,18 @@
                 imageAlreadyShown = true;
                 isDrawing = false;
 
+                $('#instructions').text('2. Turn Device Around')
+
                 setTimeout(function(){
                     $('#right-image').fadeOut(100);
                     $('#right-image-back').fadeIn(1000);  
                     setTimeout(function(){
                           $('#right-image-back-overlay').fadeIn(1000);
                          $('#bouncing-arrow').fadeIn(1000);  
-                    }, 2000) 
+                         setTimeout(function(){
+                            $('#instructions').text('3. Plug in Ethernet Cable')
+                         }, 1000);
+                    }, 3000) 
 
                 }, 5000);
             }

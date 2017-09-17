@@ -2,6 +2,21 @@ body {
     background-color: #3A4B54;
 }
 
+.left-panel {
+    padding-left: 20px;
+    width: 33%;
+    height: 100%;
+    float: left;
+    border-right: 1px solid rgba(245, 245, 245, 0.20);
+    padding-right: 20px;
+}
+
+
+.right-panel {
+    width: 66%;
+    float: left;
+}
+
 .navbar-inverse {
     background-color: #253440 !important;
     background-color: #253440 !important;
